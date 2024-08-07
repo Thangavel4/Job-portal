@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background-color: rgba(194, 233, 251, 0.451);
+        }
+        .container{
+            border: 1px solid black;
+            height: auto;
+            width:fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-top: 60px;
+            box-shadow: 0 5px 8px;
+        }
+        .row{
+            display: flex;
+        }
+        .col-6{
+            text-align: center;
+            margin: 2px;
+        }
+        .col-6 button{
+            width: 200px;
+            height: 50px;
+            font-size: large;
+            border-radius: 4px;
+            border: none;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+        .content{
+            max-width: 200px;
+            margin-top: 30px;
+        }
+        input ,.login{
+            height: 30px;
+            width:400px;
+            margin: 10px 0px;
+            border-radius: 5px;
+            border-width: thin;
+        }
+        label{
+            font-size: large;
+        }
+        .stu{
+            width:400px;
+            text-align: center;
+        }
+        .stu button{
+            width: 400px;
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-width: thin;
+            margin-bottom: 10px;
+            color:blue;
+            background-color: #e8e1e1;
+            font-size: large;
+        }
+        .login{
+            background-color: blue;
+            width: 405px;
+            color: rgb(255, 255, 255); 
+            cursor: pointer;
+            font-size: large;
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 style="text-align: center;margin: 40px 0px;">Login to your Account</h1>
+        <div class="row">
+            <div class="col-6">
+                <button id="Student" onclick="showStudentContent()" style="color:white; background-color:blue">Student</button>
+            </div>
+            <div class="col-6">
+                <button id="Employer" onclick="hideStudentContent()">Employer/T&P</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="stu" id="stucnt">
+                <button>Login with Google</button><br><br>
+                <span>OR</span>
+                <hr><br>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="john@Example.com">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Must be Atleast 6 Characters" minlength="6">
+            <button class="login">Login</button><br>
+            <a href="">Forget Password ?</a>
+            <div style="width: 400px;text-align: center; margin-top: 40px;">
+                <p>New to Internshala? Register (<a href="./stu-sign.html">Student</a> / <a href="./emp-sign.html">Company</a>)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStudentContent() {
+        var stucont= document.getElementById("stucnt");
+        var b=document.getElementById("Employer");
+        var c=document.getElementById("Student");
+        stucont.style.display = "block";
+        b.style="color:black; background-color:cream;";
+        c.style="color:white; background-color:blue";
+        }
+
+        function hideStudentContent() {
+        var stucnt = document.getElementById("stucnt");
+        var b=document.getElementById("Employer");
+        var c=document.getElementById("Student");
+        stucnt.style.display = "none";
+        b.style="color:white; background-color:blue";
+        c.style="color:black; background-color:cream;";
+
+        }
+    </script>
+</body>
+</html>

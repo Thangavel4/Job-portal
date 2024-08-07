@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Search Form</title>
+    <style>
+        .dropdown-menu { max-height: 200px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    <form class="form-inline" style="margin-right:10px;">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="typeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Type
+                </button>
+                <div class="dropdown-menu" aria-labelledby="typeDropdown" id="typeMenu">
+                    <a class="dropdown-item" href="#" onclick="selectType('Internships')">Internships</a>
+                    <a class="dropdown-item" href="#" onclick="selectType('Jobs')">Jobs</a>
+                    <a class="dropdown-item" href="#" onclick="selectType('Courses')">Courses</a>
+                </div>
+            </div>
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="subdivisionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Subdivision
+                </button>
+                <div class="dropdown-menu" aria-labelledby="subdivisionDropdown" id="subdivisionMenu">
+                    <!-- Subdivision items will be inserted here -->
+                </div>
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-outline" type="submit" style="height: 50px;">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function selectType(type) {
+            let subdivisions = {
+                'Internships': ['Engineering Internships', 'Business Internships', 'Design Internships'],
+                'Jobs': ['Engineering Jobs', 'Business Jobs', 'Design Jobs'],
+                'Courses': ['Engineering Courses', 'Business Courses', 'Design Courses']
+            };
+            
+            let subdivisionMenu = document.getElementById('subdivisionMenu');
+            subdivisionMenu.innerHTML = ''; // Clear previous items
+            
+            if (subdivisions[type]) {
+                subdivisions[type].forEach(subdivision => {
+                    let item = document.createElement('a');
+                    item.className = 'dropdown-item';
+                    item.href = '#';
+                    item.textContent = subdivision;
+                    item.onclick = function() { selectSubdivision(subdivision); };
+                    subdivisionMenu.appendChild(item);
+                });
+            }
+
+            // Change button text to selected type
+            document.getElementById('typeDropdown').innerText = type;
+            // Reset subdivision button text
+            document.getElementById('subdivisionDropdown').innerText = 'Select Subdivision';
+        }
+
+        function selectSubdivision(subdivision) {
+            // Change button text to selected subdivision
+            document.getElementById('subdivisionDropdown').innerText = subdivision;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+        body{
+            margin: 10px;
+            background-color: rgb(255, 255, 255);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .container{
+            border-radius: 5px;
+            background-color: #fff;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+        .content{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            max-width:max-content;
+            padding: 15px;
+            border: 1px solid rgb(80, 196, 222);
+            border-radius: 4px;
+            box-shadow:0 6px 8px rgba(9, 190, 245, 0.5);
+        }
+        input ,.sign{
+            height: 35px;
+            width:400px;
+            margin: 15px 0px;
+            border-radius: 2px;
+            border-width: thin;
+            display: block;
+        }
+        label{
+            font-size: large;
+        }
+        .stu{
+            width:400px;
+            text-align: center;
+        }
+        .stu button{
+            width: 400px;
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-width: thin;
+            margin-bottom: 10px;
+            color:blue;
+            background-color: #e8e1e1;
+            font-size: large;
+        }
+        .sign{
+            background-color: blue;
+            width: 405px;
+            color: rgb(255, 255, 255); 
+            cursor: pointer;
+            font-size: large;
+        }
+      
+    </style>
+</head>
+<body>
+    <div style="display: block; text-align: center;" >
+        <h1><strong>Sign-up and apply for free</strong></h1>
+        <h3>1,50,000+ companies hiring on Internshala</h3>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="stu" id="stucnt">
+                <button>Login with Google</button><br><br>
+                <span>OR</span>
+                <hr><br>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="john@Example.com">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Must be Atleast 6 Characters" minlength="6">
+            <div class="row">
+                <div class="col-6 ">
+                    <label for="firstname">First Name</label>
+                    <input type="text" placeholder="John" style="width: fit-content;">
+                </div>
+                <div class="col-6 ">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" placeholder="Doe" style="width: fit-content;">
+                </div>
+            </div>
+            <h6 style="font-size: small;">By signing up, you agree to our <a href="">Terms and Conditions</a></h6>
+            <button class="sign">Sign-up</button><br>
+            <div style="width: 400px;text-align: center; margin-top: 10px;">
+                <p>Already registered?<a href="./login.html"> Login</a></p>
+            </div>
+        </div>
+    </div>
+<script src="./bootstrap.min.js"></script>
+</body>
+</html>
